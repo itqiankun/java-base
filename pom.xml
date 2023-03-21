@@ -11,6 +11,8 @@
     <modules>
         <module>test</module>
         <module>slf4j-simple</module>
+        <module>slf4j-log4j</module>
+        <module>slf4j-logback</module>
     </modules>
 
     <properties>
