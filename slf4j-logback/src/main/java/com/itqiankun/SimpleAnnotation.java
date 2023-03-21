@@ -14,6 +14,7 @@ public class SimpleAnnotation {
 
     @Test
     public void test (){
-        log.info("学IT，找IT乾坤，官网地址： {}","https://www.itqiankun.com");
+        log.debug("debug. 学IT，找IT乾坤，官网地址： {}","https://www.itqiankun.com");
+        log.info("info. 学IT，找IT乾坤，官网地址： {}","https://www.itqiankun.com");
     }
 }
