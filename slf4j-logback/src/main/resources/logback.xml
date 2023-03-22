@@ -7,8 +7,28 @@
         </encoder>
     </appender>
 
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${user.home}/application.itqiankun.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} %n%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE_SPLIT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} %n%msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${user.home}/application.%d{yyyy-MM-dd}.itqiankun.log</fileNamePattern>
+            <!-- 超过30天的备份文件会被删除 -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
     <root level="debug">
         <appender-ref ref="CONSOLE"/>
+<!--        <appender-ref ref="FILE"/>-->
+        <appender-ref ref="FILE_SPLIT"/>
     </root>
 
 </configuration>
