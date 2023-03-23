@@ -12,22 +12,23 @@ import java.util.Map;
  **/
 public class Client {
     public static void main(String[] args) {
-        AbstractFactory badiGuoYuanFruitFactory = new BadiGuoYuanFruitFactory();
-        AbstractFactory xianFengFruitFactory = new XianFengFruitFactory();
-        Map<String, AbstractFactory> factoryMap = new HashMap<>();
+        Factory badiGuoYuanFruitFactory = new BadiGuoYuanFruitFactory();
+        Factory xianFengFruitFactory = new XianFengFruitFactory();
+        Map<String, Factory> factoryMap = new HashMap<>();
         factoryMap.put("xianfeng", xianFengFruitFactory);
         factoryMap.put("baiguoyuan", badiGuoYuanFruitFactory);
 
         test("xianfeng", factoryMap);
+        System.out.println("-----");
         test("baiguoyuan", factoryMap);
     }
 
-    private static void test(String arg, Map<String, AbstractFactory> factoryMap) {
-        AbstractFactory abstractFactory = factoryMap.get(arg);
-        Brand brand = abstractFactory.createBrand();
+    private static void test(String arg, Map<String, Factory> factoryMap) {
+        Factory factory = factoryMap.get(arg);
+        Brand brand = factory.createBrand();
         brand.name();
 
-        Fruit fruit = abstractFactory.createFruit();
+        Fruit fruit = factory.createFruit();
         fruit.color();
     }
 

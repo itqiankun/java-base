@@ -1,6 +1,6 @@
 package com.itqiankun.xianfeng;
 
-import com.itqiankun.AbstractFactory;
+import com.itqiankun.Factory;
 import com.itqiankun.Brand;
 import com.itqiankun.Fruit;
 
@@ -8,7 +8,7 @@ import com.itqiankun.Fruit;
  * @author: ma_qiankun
  * @date: 2023/3/23
  **/
-public class XianFengFruitFactory implements AbstractFactory {
+public class XianFengFruitFactory implements Factory {
 
     @Override
     public Brand createBrand() {
