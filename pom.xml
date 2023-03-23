@@ -13,6 +13,7 @@
         <module>slf4j-simple</module>
         <module>slf4j-log4j</module>
         <module>slf4j-logback</module>
+        <module>gof-simple-factory</module>
     </modules>
 
     <properties>

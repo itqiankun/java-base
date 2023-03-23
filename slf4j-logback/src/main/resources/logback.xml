@@ -4,7 +4,7 @@
     <property name="website" value="itqiankun" />
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} %n%msg%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
@@ -22,13 +22,13 @@
 
     <root level="info">
         <appender-ref ref="CONSOLE"/>
-        <appender-ref ref="FILE_SPLIT"/>
+<!--        <appender-ref ref="FILE_SPLIT"/>-->
     </root>
 
 
-    <logger name="com.itqiankun.debug" level="debug" additivity="false">
+    <logger name="com.itqiankun.debug" level="debug">
         <appender-ref ref="CONSOLE"/>
-        <appender-ref ref="FILE_SPLIT"/>
+<!--        <appender-ref ref="FILE_SPLIT"/>-->
     </logger>
 
 
