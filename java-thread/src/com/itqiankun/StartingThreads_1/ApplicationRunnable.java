@@ -1,14 +1,18 @@
 package com.itqiankun.StartingThreads_1;
 
-
 class RunnerRunnable implements Runnable {
 
-    private Integer num = 1000;
+    private volatile Integer num = 1000;
 
     @Override
     public void run() {
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 10; i++) {
             num = num - 1;
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             System.out.println(num);
         }
     }
