@@ -1,4 +1,4 @@
-package com.itqiankun.socket;
+package com.itqiankun.socket.one;
 
 import java.net.*;
 import java.io.*;
