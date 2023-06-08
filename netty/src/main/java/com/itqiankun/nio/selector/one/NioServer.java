@@ -1,4 +1,4 @@
-package com.itqiankun.nio.selector;
+package com.itqiankun.nio.selector.one;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -57,11 +57,11 @@ public class NioServer {
                     int len = 0;
                     // len为0时，无数据可读；len为-1时，客户端关闭了socket
                     while ((len = sChannel.read(buffer)) > 0){
-                    // 更改缓冲区为读模式
+                        // 更改缓冲区为读模式
                         buffer.flip();
                         String str = new String(buffer.array(), 0, len);
                         System.out.println(str);
-                    // 清空缓冲区
+                        // 清空缓冲区
                         buffer.clear();
                     }
                     // 写响应数据
