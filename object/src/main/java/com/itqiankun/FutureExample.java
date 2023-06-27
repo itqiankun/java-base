@@ -4,6 +4,8 @@ package com.itqiankun;
  * @author: ma_qiankun
  * @date: 2023/6/8
  **/
+import com.alibaba.fastjson.JSONObject;
+
 import java.util.concurrent.*;
 
 public class FutureExample {
@@ -16,6 +18,8 @@ public class FutureExample {
 			for (int i = 1; i <= 10; i++) {
 				sum += i;
 				Thread.sleep(500);
+				StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+				System.out.println(JSONObject.toJSON(stackTraceElements[2].getMethodName()));
 			}
 			return sum;
 		});

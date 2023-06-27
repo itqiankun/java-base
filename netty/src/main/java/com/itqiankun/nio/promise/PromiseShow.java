@@ -21,14 +21,11 @@ public class PromiseShow {
         Promise promise = new DefaultPromise(executor);
 
         // 下面给这个 promise 添加两个 listener
-        promise.addListener(new GenericFutureListener<Future<Integer>>() {
-            @Override
-            public void operationComplete(Future future) throws Exception {
-                if (future.isSuccess()) {
-                    System.out.println("任务结束，结果：" + future.get());
-                } else {
-                    System.out.println("任务失败，异常：" + future.cause());
-                }
+        promise.addListener((GenericFutureListener<Future<Integer>>) future -> {
+            if (future.isSuccess()) {
+                System.out.println("任务结束，结果：" + future.get());
+            } else {
+                System.out.println("任务失败，异常：" + future.cause());
             }
         }).addListener(new GenericFutureListener<Future<Integer>>() {
             @Override
