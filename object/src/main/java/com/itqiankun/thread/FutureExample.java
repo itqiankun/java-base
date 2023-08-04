@@ -1,4 +1,4 @@
-package com.itqiankun;
+package com.itqiankun.thread;
 
 /**
  * @author: ma_qiankun

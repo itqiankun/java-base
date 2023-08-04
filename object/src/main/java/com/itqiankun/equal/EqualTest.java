@@ -33,9 +33,6 @@ public class EqualTest {
 		log.info("==符号比较:{}", str==str1);
 		log.info("==符号比较:{}", str1==str2);
 		log.info("==符号比较:{}", str==str2);
-		log.info("equal符号比较:{}", str.equals(str1));
-		log.info("equal符号比较:{}", str1.equals(str2));
-		log.info("equal符号比较:{}", str.equals(str2));
 	}
 
 	@Test
@@ -44,7 +41,6 @@ public class EqualTest {
 		String str1 =new String("a");
 
 		log.info("==符号比较:{}", str==str1);
-		log.info("equal符号比较:{}", str.equals(str1));
 	}
 
 	@Test
@@ -56,9 +52,6 @@ public class EqualTest {
 		log.info("==符号比较:{}", integer==integer1);
 		log.info("==符号比较:{}", integer1==integer2);
 		log.info("==符号比较:{}", integer==integer2);
-		log.info("equal符号比较:{}", integer.equals(integer1));
-		log.info("equal符号比较:{}", integer1.equals(integer2));
-		log.info("equal符号比较:{}", integer.equals(integer2));
 	}
 
 	@Test
@@ -70,9 +63,6 @@ public class EqualTest {
 		log.info("==符号比较:{}", integer==integer1);
 		log.info("==符号比较:{}", integer1==integer2);
 		log.info("==符号比较:{}", integer==integer2);
-		log.info("equal符号比较:{}", integer.equals(integer1));
-		log.info("equal符号比较:{}", integer1.equals(integer2));
-		log.info("equal符号比较:{}", integer.equals(integer2));
 	}
 
 	@Test
@@ -84,9 +74,6 @@ public class EqualTest {
 		log.info("==符号比较:{}", integer==integer1);
 		log.info("==符号比较:{}", integer1==integer2);
 		log.info("==符号比较:{}", integer==integer2);
-		log.info("equal符号比较:{}", integer.equals(integer1));
-		log.info("equal符号比较:{}", integer1.equals(integer2));
-		log.info("equal符号比较:{}", integer.equals(integer2));
 	}
 
 	@Test
@@ -98,9 +85,15 @@ public class EqualTest {
 		log.info("==符号比较:{}", integer==integer1);
 		log.info("==符号比较:{}", integer1==integer2);
 		log.info("==符号比较:{}", integer==integer2);
-		log.info("equal符号比较:{}", integer.equals(integer1));
-		log.info("equal符号比较:{}", integer1.equals(integer2));
-		log.info("equal符号比较:{}", integer.equals(integer2));
+	}
+
+	@Test
+	public void equalAndEqualityIntAndObject(){
+		Integer integer = 1;
+		Integer integer1 = new Integer(1);
+
+		log.info("==符号比较:{}", integer==integer1);
+		log.info("==符号比较:{}", integer1==integer);
 	}
 
 	@Test
@@ -112,9 +105,6 @@ public class EqualTest {
 		log.info("==符号比较:{}", person==person1);
 		log.info("==符号比较:{}", person1==person2);
 		log.info("==符号比较:{}", person==person2);
-		log.info("equal符号比较:{}", person.equals(person1));
-		log.info("equal符号比较:{}", person1.equals(person2));
-		log.info("equal符号比较:{}", person.equals(person2));
 	}
 
 }
