@@ -1,0 +1,25 @@
+@startuml
+
+interface SocketOptions {
+    + void setOption
+}
+abstract class SocketImpl {
+    # Socket socket;
+    # ServerSocket serverSocket;
+    # FileDescriptor fd;
+    # InetAddress address;
+}
+class Socket {
+    # SocketImpl impl;
+    + SocketInputStream getInputStream();
+}
+class ServerSocket {
+    # SocketImpl impl;
+    + Socket accept()
+}
+
+SocketImpl ..|> SocketOptions
+SocketImpl --> Socket
+SocketImpl --> ServerSocket
+
+@enduml
