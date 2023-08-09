@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>java-base</artifactId>
-        <groupId>org.example</groupId>
+        <groupId>com.itqiankun</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -16,11 +16,11 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/io.netty/netty-example -->
+        <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
         <dependency>
             <groupId>io.netty</groupId>
-            <artifactId>netty-example</artifactId>
-            <version>4.1.34.Final</version>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.96.Final</version>
         </dependency>
 
     </dependencies>

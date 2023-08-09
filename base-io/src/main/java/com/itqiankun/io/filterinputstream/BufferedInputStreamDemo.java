@@ -15,7 +15,7 @@ import java.io.FileOutputStream;
 @Slf4j
 public class BufferedInputStreamDemo {
 	/**
-	 * 生成测试文本
+	 * 生成测试文本，大概10m
 	 * @throws Exception
 	 */
 	@Test
@@ -36,7 +36,7 @@ public class BufferedInputStreamDemo {
 	}
 
 	/**
-	 * read()不用缓冲区，用8s
+	 * read()不用缓冲区，10m的文本内容用8s
 	 * @throws Exception
 	 */
 	@Test
@@ -56,7 +56,7 @@ public class BufferedInputStreamDemo {
 
 
 	/**
-	 * read()用BufferedInputStream自带的缓冲区，用0.2s
+	 * read()用BufferedInputStream自带的缓冲区，10m的文本内容用0.2s
 	 * @throws Exception
 	 */
 	@Test

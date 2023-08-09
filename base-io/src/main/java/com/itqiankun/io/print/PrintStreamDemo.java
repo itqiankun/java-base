@@ -14,12 +14,13 @@ import java.io.PrintStream;
  **/
 @Slf4j
 public class PrintStreamDemo {
+
 	@Test
 	public void it_qk() throws FileNotFoundException {
-		PrintStream ps = null ;
+		PrintStream ps = null;
 		ps = new PrintStream(new FileOutputStream("it_qk.txt"));
-		ps.print("welcome ") ;
-		ps.println("https://itqiankun.com") ;
+		ps.print("welcome ");
+		ps.println("https://itqiankun.com");
 		ps.close();
 	}
 
