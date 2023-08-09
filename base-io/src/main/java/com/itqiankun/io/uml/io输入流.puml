@@ -1,0 +1,10 @@
+@startmindmap
++ InputStream
+++ ByteArrayInputStream
+++ StringBufferInputStream
+++ FileInputStream
++++ SocketInputStream
+++ ObjectInputStream
+++ FilterInputStream
++++ BufferedInputStream
+@endmindmap

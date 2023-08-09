@@ -16,7 +16,7 @@ public class OutPutStreamDemo {
 	 */
 	@Test
 	public void it_qk() throws IOException {
-		FileOutputStream outputStream = new FileOutputStream(new File("/Users/mqk/Desktop/mqk-worker/mqk-code/java-base/base-io/output/it_qk1.txt"));
+		FileOutputStream outputStream = new FileOutputStream("/Users/mqk/Desktop/mqk-worker/mqk-code/java-base/base-io/output/it_qk1.txt");
 		outputStream.write(97);
 		outputStream.write(98);
 		outputStream.write(99);
@@ -29,7 +29,7 @@ public class OutPutStreamDemo {
 	 */
 	@Test
 	public void it_qk1() throws IOException {
-		FileOutputStream outputStream = new FileOutputStream(new File("output/it_qk1.txt"));
+		FileOutputStream outputStream = new FileOutputStream("output/it_qk1.txt");
 		outputStream.write(97);
 		outputStream.write(98);
 		outputStream.write(99);
@@ -42,7 +42,7 @@ public class OutPutStreamDemo {
 	 */
 	@Test
 	public void it_qk2() throws IOException {
-		FileOutputStream outputStream = new FileOutputStream(new File("auto_file.txt"));
+		FileOutputStream outputStream = new FileOutputStream("auto_file.txt");
 		outputStream.write(97);
 		outputStream.write(98);
 		outputStream.write(99);
