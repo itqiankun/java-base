@@ -21,6 +21,8 @@
         <module>base-object</module>
         <module>base-demo</module>
         <module>base-time</module>
+        <module>base-class</module>
+        <module>base-keyword</module>
     </modules>
 
     <properties>

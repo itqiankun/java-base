@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
@@ -30,6 +31,24 @@ public class InPutStreamDemo {
 	@Test
 	public void it_qk1() throws IOException {
 		FileInputStream inputStream = new FileInputStream("xxxx.txt");
+		int read = inputStream.read();
+		System.out.println(read);
+	}
+	/**
+	 *
+	 * @throws IOException
+	 */
+	@Test
+	public void it_qk2() throws IOException {
+		FileInputStream inputStream = new FileInputStream("abc.txt");
+		int read = inputStream.read();
+		System.out.println(read);
+	}
+
+	public static void main(String[] args) throws Exception {
+		String property = System.getProperty("user.dir");
+		System.out.println(property);
+		FileInputStream inputStream = new FileInputStream(property+"/base-io/abc.txt");
 		int read = inputStream.read();
 		System.out.println(read);
 	}
