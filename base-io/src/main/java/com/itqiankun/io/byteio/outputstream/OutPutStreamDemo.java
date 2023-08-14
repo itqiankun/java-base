@@ -1,4 +1,4 @@
-package com.itqiankun.io.outputstream;
+package com.itqiankun.io.byteio.outputstream;
 
 import org.junit.Test;
 

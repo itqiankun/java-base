@@ -1,10 +1,9 @@
-package com.itqiankun.io.inputstream;
+package com.itqiankun.io.byteio.inputstream;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**

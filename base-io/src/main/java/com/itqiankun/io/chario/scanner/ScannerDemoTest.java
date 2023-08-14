@@ -1,4 +1,4 @@
-package com.itqiankun.io.scanner;
+package com.itqiankun.io.chario.scanner;
 
 import lombok.extern.slf4j.Slf4j;
 

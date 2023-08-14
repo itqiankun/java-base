@@ -1,4 +1,4 @@
-package com.itqiankun.io.scanner;
+package com.itqiankun.io.chario.scanner;
 
 import java.util.Scanner;
 

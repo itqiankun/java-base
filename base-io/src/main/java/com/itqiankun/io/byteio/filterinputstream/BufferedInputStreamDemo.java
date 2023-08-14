@@ -1,4 +1,4 @@
-package com.itqiankun.io.filterinputstream;
+package com.itqiankun.io.byteio.filterinputstream;
 
 import cn.hutool.core.date.StopWatch;
 import lombok.extern.slf4j.Slf4j;
