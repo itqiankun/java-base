@@ -1,4 +1,4 @@
-package com.itqiankun.finaldemo;
+package com.itqiankun.objectdemo;
 
 import cn.hutool.core.util.ObjectUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +15,9 @@ import java.util.List;
 @Slf4j
 public class Sub implements Father{
     public void name(){
+        System.out.println("sub");
+    }
+    private void  privateName(){
         System.out.println("sub");
     }
     @Deprecated
@@ -57,7 +60,18 @@ public class Sub implements Father{
         List<Method> list = Arrays.asList(methods);
         for (int i = 0; i < list.size(); i++) {
             Method method = list.get(i);
-            System.out.println(method.getName());
+            log.info("当前方法:{}, 当前类:{}",method.getName(), method.getDeclaringClass().getName());
+        }
+    }
+
+    @Test
+    public void it_qk_getDeclaredMethods_name() {
+        Class<Sub> subClass = Sub.class;
+        Method[] methods = subClass.getDeclaredMethods();
+        List<Method> list = Arrays.asList(methods);
+        for (int i = 0; i < list.size(); i++) {
+            Method method = list.get(i);
+            log.info("当前方法:{}, 当前类:{}",method.getName(), method.getDeclaringClass().getName());
         }
     }
 

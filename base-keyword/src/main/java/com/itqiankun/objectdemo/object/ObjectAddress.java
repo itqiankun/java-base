@@ -1,4 +1,4 @@
-package com.itqiankun.finaldemo.object;
+package com.itqiankun.objectdemo.object;
 
 /**
  * @author: ma_qiankun

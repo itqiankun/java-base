@@ -23,6 +23,7 @@
         <module>base-time</module>
         <module>base-class</module>
         <module>base-keyword</module>
+        <module>base-lamdba</module>
     </modules>
 
     <properties>

@@ -1,6 +1,4 @@
-package com.itqiankun.finaldemo;
-
-import org.junit.Test;
+package com.itqiankun.objectdemo;
 
 /**
  * @author: ma_qiankun

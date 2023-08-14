@@ -1,4 +1,4 @@
-package com.itqiankun.finaldemo;
+package com.itqiankun.objectdemo;
 
 import lombok.Data;
 
