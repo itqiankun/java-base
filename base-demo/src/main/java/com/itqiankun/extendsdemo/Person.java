@@ -1,4 +1,4 @@
-package com.itqiankun.objectdemo;
+package com.itqiankun.implementsdemo;
 
 import lombok.Data;
 
@@ -8,5 +8,5 @@ import lombok.Data;
  **/
 @Data
 public class Person {
-	public String name;
+	public String personName;
 }

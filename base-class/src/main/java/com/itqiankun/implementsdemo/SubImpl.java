@@ -1,4 +1,4 @@
-package com.itqiankun.objectdemo;
+package com.itqiankun.implementsdemo;
 
 import cn.hutool.core.util.ObjectUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -13,7 +13,7 @@ import java.util.List;
  * @date: 2023/4/26
  **/
 @Slf4j
-public class Sub implements Father{
+public class SubImpl implements FatherInterface {
     public void name(){
         System.out.println("sub");
     }
@@ -25,29 +25,25 @@ public class Sub implements Father{
         System.out.println("sub");
     }
 
-    public void subMethodParam(String hello, Integer num, Person person){
-        System.out.println("sub");
-    }
-
     @Test
     public void it_qk_class_name() {
-        Class<Sub> subClass = Sub.class;
+        Class<SubImpl> subClass = SubImpl.class;
         System.out.println(subClass.getName());
     }
 
     @Test
     public void it_qk_class_console() {
-        Class<Sub> subClass = Sub.class;
+        Class<SubImpl> subClass = SubImpl.class;
         System.out.println(subClass);
         System.out.println(subClass.getName());
     }
 
     @Test
     public void it_qk_class_instance() {
-        Class<Sub> subClass = Sub.class;
+        Class<SubImpl> subClass = SubImpl.class;
         try {
-            Sub sub = subClass.newInstance();
-            System.out.println(sub);
+            SubImpl subImpl = subClass.newInstance();
+            System.out.println(subImpl);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -55,7 +51,7 @@ public class Sub implements Father{
 
     @Test
     public void it_qk_method_name() {
-        Class<Sub> subClass = Sub.class;
+        Class<SubImpl> subClass = SubImpl.class;
         Method[] methods = subClass.getMethods();
         List<Method> list = Arrays.asList(methods);
         for (int i = 0; i < list.size(); i++) {
@@ -66,7 +62,7 @@ public class Sub implements Father{
 
     @Test
     public void it_qk_getDeclaredMethods_name() {
-        Class<Sub> subClass = Sub.class;
+        Class<SubImpl> subClass = SubImpl.class;
         Method[] methods = subClass.getDeclaredMethods();
         List<Method> list = Arrays.asList(methods);
         for (int i = 0; i < list.size(); i++) {
@@ -78,7 +74,7 @@ public class Sub implements Father{
 
     @Test
     public void it_qk_method_getClass() {
-        Class<Sub> subClass = Sub.class;
+        Class<SubImpl> subClass = SubImpl.class;
         Method[] methods = subClass.getMethods();
         List<Method> list = Arrays.asList(methods);
         for (int i = 0; i < list.size(); i++) {
@@ -89,7 +85,7 @@ public class Sub implements Father{
 
     @Test
     public void it_qk_method_annotation() {
-        Class<Sub> subClass = Sub.class;
+        Class<SubImpl> subClass = SubImpl.class;
         Method[] methods = subClass.getMethods();
         List<Method> list = Arrays.asList(methods);
         for (int i = 0; i < list.size(); i++) {
@@ -104,7 +100,7 @@ public class Sub implements Father{
 
     @Test
     public void it_qk_method_param() {
-        Class<Sub> subClass = Sub.class;
+        Class<SubImpl> subClass = SubImpl.class;
         Method[] methods = subClass.getMethods();
         List<Method> list = Arrays.asList(methods);
         for (int i = 0; i < list.size(); i++) {

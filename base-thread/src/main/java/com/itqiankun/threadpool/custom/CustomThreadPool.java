@@ -12,14 +12,11 @@ public class CustomThreadPool {
 	public static Executor getAsyncExecutor() {
 		AtomicInteger counter = new AtomicInteger(1);
 		ThreadPoolExecutor taskExecutor = new ThreadPoolExecutor(10, 10, 0, TimeUnit.SECONDS,
-				new ArrayBlockingQueue<>(1000), new ThreadFactory() {
-			@Override
-			public Thread newThread(Runnable r) {
-				Thread thread = new Thread(r);
-				thread.setName("hello_" + counter.getAndIncrement());
-				return thread;
-			}
-		});
+				new ArrayBlockingQueue<>(1000), r -> {
+					Thread thread = new Thread(r);
+					thread.setName("hello_" + counter.getAndIncrement());
+					return thread;
+				});
 		return taskExecutor;
 	}
 
