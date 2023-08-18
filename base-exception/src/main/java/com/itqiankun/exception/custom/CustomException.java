@@ -1,4 +1,4 @@
-package com.itqiankun.customexception;
+package com.itqiankun.exception.custom;
 
 /**
  * @author: ma_qiankun
