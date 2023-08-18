@@ -1,4 +1,4 @@
-package com.itqiankun.interfacedemo;
+package com.itqiankun.classdemo.interfacedemo;
 
 import org.junit.Test;
 
@@ -34,7 +34,7 @@ public class InterfaceMethodDemo {
 
 	@Test
 	public  void it_qk_class_nameByForName() throws ClassNotFoundException {
-		Class<?> aClass = Class.forName("com.itqiankun.interfacedemo.InterfaceClass");
+		Class<?> aClass = Class.forName("com.itqiankun.classdemo.interfacedemo.InterfaceClass");
 		String name = aClass.getName();
 		System.out.println(name);
 	}

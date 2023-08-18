@@ -1,4 +1,4 @@
-package com.itqiankun.extendsdemo;
+package com.itqiankun.extendsrelationdemo;
 
 import lombok.Data;
 

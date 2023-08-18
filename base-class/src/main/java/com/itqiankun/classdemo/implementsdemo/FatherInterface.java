@@ -1,4 +1,4 @@
-package com.itqiankun.implementsdemo;
+package com.itqiankun.classdemo.implementsdemo;
 
 /**
  * @author: ma_qiankun

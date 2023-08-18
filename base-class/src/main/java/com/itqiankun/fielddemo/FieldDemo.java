@@ -1,7 +1,7 @@
 package com.itqiankun.fielddemo;
 
-import com.itqiankun.extendsdemo.Person;
-import com.itqiankun.extendsdemo.Sub;
+import com.itqiankun.extendsrelationdemo.Person;
+import com.itqiankun.extendsrelationdemo.Sub;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 

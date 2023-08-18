@@ -1,4 +1,4 @@
-package com.itqiankun.extendsdemo;
+package com.itqiankun.extendsrelationdemo;
 
 /**
  * @author: ma_qiankun

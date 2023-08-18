@@ -1,4 +1,4 @@
-package com.itqiankun.extendsdemo;
+package com.itqiankun.extendsrelationdemo;
 
 import com.itqiankun.implementsdemo.Person;
 import lombok.extern.slf4j.Slf4j;
