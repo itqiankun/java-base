@@ -15,6 +15,7 @@
         <module>slf4j-logback</module>
         <module>gof-simple-factory</module>
         <module>gof-delegate</module>
+        <module>gof-decorator</module>
         <module>gof-adaptee</module>
         <module>fastjson-demo</module>
         <module>base-io</module>
