@@ -17,6 +17,8 @@
         <module>gof-delegate</module>
         <module>gof-decorator</module>
         <module>gof-adaptee</module>
+        <module>gof-template</module>
+        <module>gof-listener</module>
         <module>fastjson-demo</module>
         <module>base-io</module>
         <module>base-thread</module>
@@ -28,6 +30,10 @@
         <module>base-keyword</module>
         <module>base-lamdba</module>
         <module>base-exception</module>
+        <module>base-anonymous</module>
+        <module>base-type</module>
+        <module>base-genericity</module>
+        <module>base-annotation</module>
     </modules>
 
     <properties>
