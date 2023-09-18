@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
+import java.util.List;
 
 /**
  * @author: ma_qiankun
@@ -13,19 +14,14 @@ import java.lang.reflect.Parameter;
 @Slf4j
 public class ParameterDemo {
 
-	static {
-		try {
-			Class<?> paramClass = Parameter.class;
-			Method getName = paramClass.getMethod("getName");
-			Method getParameters = Method.class.getMethod("getParameters");
-		} catch (Exception e) {
-			// ignore
-
-		}
-	}
 
 	public void myMethod(String name, int age) {
 		// 方法体
+	}
+
+	public List<Integer> myMethodReturnList(String name, int age) {
+		// 方法体
+		return null;
 	}
 
 	@Test
@@ -43,6 +39,13 @@ public class ParameterDemo {
 			System.out.println("Modifiers: " + modifiers);
 		}
 
+	}
+
+	@Test
+	public void it_qk_return_list() throws Exception {
+		Method method = ParameterDemo.class.getMethod("myMethodReturnList", String.class, int.class);
+		Class<?> returnType = method.getReturnType();
+		System.out.println(returnType);
 	}
 
 }

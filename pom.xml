@@ -19,6 +19,8 @@
         <module>gof-adaptee</module>
         <module>gof-template</module>
         <module>gof-listener</module>
+        <module>gof-chain</module>
+        <module>gof-pipeline</module>
         <module>fastjson-demo</module>
         <module>base-io</module>
         <module>base-thread</module>
@@ -34,6 +36,7 @@
         <module>base-type</module>
         <module>base-genericity</module>
         <module>base-annotation</module>
+        <module>base-array</module>
     </modules>
 
     <properties>

@@ -1,7 +1,7 @@
 package com.itqiankun.fielddemo;
 
-import com.itqiankun.AnnotatedElement.Person;
-import com.itqiankun.AnnotatedElement.Sub;
+import com.itqiankun.advanced.Person;
+import com.itqiankun.advanced.Sub;
 import com.itqiankun.common.MyClass;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -72,8 +72,8 @@ public class FieldDemo {
 
 		System.out.println("publicField: " + value1);
 		System.out.println("privateField: " + value2);
-		Class<? extends String> aClass = value2.getClass(); // 这里通过field又获取了Class
-		System.out.println(aClass);
+		Class<?> type = privateField.getType();// 这里通过getType()获取当前Field对应类型的Class
+		System.out.println(type);
 	}
 
 	@Test
