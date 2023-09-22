@@ -37,6 +37,9 @@
         <module>base-genericity</module>
         <module>base-annotation</module>
         <module>base-array</module>
+        <module>base-xxxDescriptor</module>
+        <module>base-innerclass</module>
+        <module>base-proxy</module>
     </modules>
 
     <properties>
@@ -67,8 +70,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>RELEASE</version>
-            <scope>compile</scope>
+            <version>1.18.20</version>
         </dependency>
         <dependency>
             <groupId>cn.hutool</groupId>

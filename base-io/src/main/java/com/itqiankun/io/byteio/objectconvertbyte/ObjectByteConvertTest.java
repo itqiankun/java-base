@@ -16,7 +16,7 @@ public class ObjectByteConvertTest {
 		System.out.println(str);
 		byte[] byteArray = objectToByteArray(str);
 		System.out.println(byteArray);
-		System.out.println(objectToByteArray(byteArray));
+		System.out.println(byteArraytoObject(byteArray));
 	}
 
 	public static byte[] objectToByteArray(Object obj) {
@@ -35,7 +35,7 @@ public class ObjectByteConvertTest {
 		return bytes;
 	}
 
-	public static Object objectToByteArray(byte[] bytes) {
+	public static Object byteArraytoObject(byte[] bytes) {
 
 		try {
 			ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
