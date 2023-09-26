@@ -7,7 +7,7 @@ package com.itqiankun;
 public class UserServiceImpl implements UserService{
 	@Override
 	public final String getUserByName(String name) {
-		System.out.println("从数据库中查询到:" + name);
+//		System.out.println("从数据库中查询到:" + name);
 		return name;
 	}
 
