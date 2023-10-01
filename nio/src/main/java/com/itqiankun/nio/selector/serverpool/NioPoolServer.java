@@ -1,4 +1,4 @@
-package com.itqiankun.nio.selector.serverthreadpool;
+package com.itqiankun.nio.selector.serverpool;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -23,13 +23,10 @@ public class NioPoolServer {
             Selector subSelector = Selector.open();
             serverSocketChannel.register(subSelector, SelectionKey.OP_ACCEPT);
             System.out.println("服务器已启动，监听端口：" + SERVER_PORT);
-
             // 循环处理就绪的事件
-            ExecutorService executorService = Executors.newFixedThreadPool(10);
-            ReadOrWriteThread command = new ReadOrWriteThread();
-            executorService.submit(new AcceptThreadPool(command, subSelector));
-            executorService.execute(command);
-//            executorService.execute(new ReadOrWriteThreadPool(parentSelector));
+            ExecutorService executorService = Executors.newFixedThreadPool(1);
+            executorService.submit(new AcceptPool( subSelector));
+
         } catch (IOException e) {
             e.printStackTrace();
         }

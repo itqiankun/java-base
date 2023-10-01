@@ -1,4 +1,6 @@
-package com.itqiankun.nio.selector.serverthreadpool;
+package com.itqiankun.nio.selector.selectortomanythreadproblem;
+
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.nio.channels.SelectionKey;
@@ -11,15 +13,17 @@ import java.util.Iterator;
  * @author: ma_qiankun
  * @date: 2023/9/28
  **/
-public class AcceptThreadPool implements Runnable{
+@Slf4j
+public class AcceptPool implements Runnable{
 
-	Selector subSelector;
-	ReadOrWriteThread thread;
+	private Selector subSelector;
+	private Selector parentSelector;
 
-	public AcceptThreadPool(ReadOrWriteThread thread, Selector subSelector){
+
+	public AcceptPool(Selector subSelector, Selector parentSelector){
 		try {
 			this.subSelector = subSelector;
-			this.thread = thread;
+			this.parentSelector = parentSelector;
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
@@ -39,9 +43,10 @@ public class AcceptThreadPool implements Runnable{
 						ServerSocketChannel serverSocketChannel1 = (ServerSocketChannel) key.channel();
 						SocketChannel socketChannel = serverSocketChannel1.accept();
 						socketChannel.configureBlocking(false);
-						thread.register(new NioTask(socketChannel));
-						System.out.println("接受新连接：" + socketChannel.getRemoteAddress());
+						socketChannel.register(parentSelector, SelectionKey.OP_READ);
+						log.info("接受新连接：" + socketChannel.getRemoteAddress());
 					}
+
 				}
 			} catch (IOException e) {
 				throw new RuntimeException(e);

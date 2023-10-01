@@ -1,7 +1,8 @@
-package com.itqiankun.nio.selector.serverthreadpool;
+package com.itqiankun.nio.selector.serverpool;
 
 import cn.hutool.core.util.ObjectUtil;
 import com.google.common.collect.Lists;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -16,7 +17,8 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author: ma_qiankun
  * @date: 2023/9/28
  **/
-public class ReadOrWriteThread implements Runnable{
+@Slf4j
+public class ServerThread implements Runnable{
 
 	Selector selector;
 
@@ -24,10 +26,9 @@ public class ReadOrWriteThread implements Runnable{
 
 	private ReentrantLock taskMainLock = new ReentrantLock();
 
-
-	public ReadOrWriteThread(){
+	public ServerThread(){
 		try {
-			selector =Selector.open();
+			this.selector = Selector.open();
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
@@ -52,7 +53,7 @@ public class ReadOrWriteThread implements Runnable{
 							while ((len = socketChannel.read(buffer)) > 0){
 								buffer.flip();
 								request = new String(buffer.array(), 0, len);
-								System.out.println(request);
+								log.info(request);
 								buffer.clear();
 							}
 						} catch (IOException e) {
@@ -69,7 +70,8 @@ public class ReadOrWriteThread implements Runnable{
 							buffer.flip();
 							socketChannel.write(buffer);
 							buffer.clear();
-						} catch (IOException e) {
+							key.cancel();
+						} catch (Exception e) {
 							e.printStackTrace();
 						}
 					}

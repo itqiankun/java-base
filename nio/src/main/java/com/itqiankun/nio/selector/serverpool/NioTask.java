@@ -1,4 +1,4 @@
-package com.itqiankun.nio.selector.serverthreadpool;
+package com.itqiankun.nio.selector.serverpool;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

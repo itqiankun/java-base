@@ -68,6 +68,7 @@ public class NioServer {
                     buffer.flip();
                     sChannel.write(buffer);
                     buffer.clear();
+                    sk.cancel();
                 }
             }
         }

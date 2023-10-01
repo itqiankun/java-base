@@ -1,0 +1,35 @@
+@startuml
+
+class MainReactor {
+    # private Selector selector;
+    # private SubReactorThreadGroup subReactorThreadGroup;
+}
+
+class SubReactorThreadGroup {
+    # private SubReactorThread[] ioThreads;
+
+}
+
+class SubReactorThread {
+    # private ExecutorService businessExecutorPool;
+    # private List<NioTask> taskList = new ArrayList<NioTask>(512);
+    # private ReentrantLock taskMainLock = new ReentrantLock();
+    # private Selector selector;
+}
+
+class NioTask {
+    # private SocketChannel sc;
+    # private SelectionKey op;
+}
+
+class SelectionKey {
+}
+
+
+SubReactorThreadGroup --> MainReactor
+SubReactorThread --> SubReactorThreadGroup
+NioTask --> SubReactorThread
+ExecutorService --> SubReactorThread
+SocketChannel --> NioTask
+SelectionKey --> NioTask
+@enduml
