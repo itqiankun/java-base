@@ -23,6 +23,7 @@
         <module>gof-pipeline</module>
         <module>fastjson-demo</module>
         <module>base-io</module>
+        <module>base-io-socket</module>
         <module>base-thread</module>
         <module>base-socket</module>
         <module>base-object</module>

@@ -1,4 +1,4 @@
-package com.itqiankun.nio.selector.one;
+package com.itqiankun.nio.selector.clienttwothread;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -73,6 +73,7 @@ public class NioClient {
 		while (true) {
 			String str = sc.next();
 			if ("quit".equals(str)) {
+				System.out.println("quit");
 				break;
 			}
 			buffer.put(str.getBytes());

@@ -1,0 +1,34 @@
+@startuml
+
+interface Channel {
+      + public boolean isOpen();
+}
+
+abstract class SelectableChannel {
+    + public final SelectionKey register(Selector sel, int ops);
+
+}
+
+abstract class AbstractSelectableChannel {
+    # private SelectionKey[] keys = null;
+    + private SelectionKey findKey(Selector sel);
+
+}
+
+class SocketChannel {
+
+}
+
+
+abstract class SelectionKey {
+    + public abstract Selector selector();
+
+}
+
+
+
+SelectionKey  ..> AbstractSelectableChannel
+SocketChannel  ..|> AbstractSelectableChannel
+AbstractSelectableChannel ..|> SelectableChannel
+SelectableChannel --|> Channel
+@enduml

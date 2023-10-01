@@ -1,4 +1,4 @@
-package com.itqiankun.nio.selector.one;
+package com.itqiankun.nio.selector;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

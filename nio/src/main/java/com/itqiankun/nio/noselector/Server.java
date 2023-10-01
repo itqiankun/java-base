@@ -1,4 +1,4 @@
-package com.itqiankun.nio.onerequest;
+package com.itqiankun.nio.noselector;
 
 /**
  * @author: ma_qiankun
@@ -17,19 +17,19 @@ public class Server {
         System.out.println("Server started, listening on port 8080...");
 
         while (true) {
-            // 等待客户端连接
-            SocketChannel client = server.accept();
-            System.out.println("Client connected: " + client.getRemoteAddress());
+            // 等待客户端连接，如果没有客户端连接，会阻塞到这里
+            SocketChannel clisnetChannel = server.accept();
+            System.out.println("Client connected: " + clisnetChannel.getRemoteAddress());
 
             String message = "Hello from server!";
             ByteBuffer buffer = ByteBuffer.wrap(message.getBytes());
 
             // 发送消息给客户端
-            client.write(buffer);
-            System.out.println("Message sent to client.");
+            clisnetChannel.write(buffer);
+            System.out.println("Message sent to clisnetChannel.");
 
-            // 关闭 SocketChannel
-            client.close();
+            // 关闭SocketChannel，服务端不需要关闭，由客户端关闭，然后服务端就自动关闭了
+//            clisnetChannel.close();
             System.out.println("Client disconnected.");
         }
     }
