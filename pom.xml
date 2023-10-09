@@ -41,6 +41,10 @@
         <module>base-xxxDescriptor</module>
         <module>base-innerclass</module>
         <module>base-proxy</module>
+        <module>base-iterator</module>
+        <module>base-nio</module>
+        <module>base-symbol</module>
+        <module>base-data-structure</module>
     </modules>
 
     <properties>
