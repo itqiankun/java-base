@@ -6,8 +6,8 @@ package com.itqiankun.doublylinkedlist;
  **/
 
 public class DoublyLinkedList {
-	private Node head;
-	private Node tail;
+	private DoublyNode head;
+	private DoublyNode tail;
 
 	public DoublyLinkedList() {
 		this.head = null;
@@ -15,31 +15,31 @@ public class DoublyLinkedList {
 	}
 
 	public void addToHead(int data) {
-		Node newNode = new Node(data);
+		DoublyNode newDoublyNode = new DoublyNode(data);
 		if (head == null) {
-			head = newNode;
-			tail = newNode;
+			head = newDoublyNode;
+			tail = newDoublyNode;
 		} else {
-			newNode.next = head;
-			head.prev = newNode;
-			head = newNode;
+			newDoublyNode.next = head;
+			head.prev = newDoublyNode;
+			head = newDoublyNode;
 		}
 	}
 
 	public void addToEnd(int data) {
-		Node newNode = new Node(data);
+		DoublyNode newDoublyNode = new DoublyNode(data);
 		if (tail == null) {
-			head = newNode;
-			tail = newNode;
+			head = newDoublyNode;
+			tail = newDoublyNode;
 		} else {
-			newNode.prev = tail;
-			tail.next = newNode;
-			tail = newNode;
+			newDoublyNode.prev = tail;
+			tail.next = newDoublyNode;
+			tail = newDoublyNode;
 		}
 	}
 
 	public void printList() {
-		Node current = head;
+		DoublyNode current = head;
 		System.out.print("List: ");
 		while (current != null) {
 			System.out.print(current.data + " ");
@@ -58,12 +58,12 @@ public class DoublyLinkedList {
 	}
 }
 
-class Node {
+class DoublyNode {
 	int data;
-	Node prev;
-	Node next;
+	DoublyNode prev;
+	DoublyNode next;
 
-	public Node(int data) {
+	public DoublyNode(int data) {
 		this.data = data;
 		this.prev = null;
 		this.next = null;
