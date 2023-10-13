@@ -26,4 +26,25 @@ public class DemoTest {
             System.out.println(arrayList.get(idx.getAndIncrement() % arrayList.size()));
         }
     }
+
+    @Test
+    public void it_qk_1() throws Exception {
+        int num = 5;
+        int result = num << 2;
+        System.out.println(result);  // 输出 20
+    }
+
+    @Test
+    public void it_qk_2() throws Exception {
+        int num = 5;
+        int result = num << 3;
+        System.out.println(result);  // 输出 5 * 2^3 =40
+    }
+
+    @Test
+    public void it_qk_3() throws Exception {
+        int num = 40;
+        int result = num >>> 3;
+        System.out.println(result);  // 输出 5
+    }
 }

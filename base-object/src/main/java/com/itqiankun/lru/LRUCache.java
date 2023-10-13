@@ -25,8 +25,8 @@ public class LRUCache <K, V> extends LinkedHashMap<K, V> {
 		cache.put(1, "one");
 		cache.put(2, "two");
 		cache.put(3, "three");
-		cache.get(1); // 访问1，将1移到链表末尾
-		cache.put(4, "four"); // 添加新元素，超出缓存最大容量，将2移除
-		System.out.println(cache); // 输出：{1=one, 3=three, 4=four}
+		cache.get(1); // 访问1，将1移到链表末尾，此时顺序就是2,3,1
+		cache.put(4, "four"); // 添加新元素，此时变成2,3,1,4，但是超出缓存最大容量2，所以就将头指针的2移除，所以就变成了3,1,4
+		System.out.println(cache); // 输出3,1,4
 	}
 }

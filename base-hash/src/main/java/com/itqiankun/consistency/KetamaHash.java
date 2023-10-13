@@ -34,6 +34,15 @@ public class KetamaHash {
 	}
 
 
+	@Test
+	public void it_qk1(){
+		System.out.println(hashKey("192.168.0.1:111"));
+		System.out.println(hashKey("192.168.0.3:111"));
+		System.out.println(hashKey("192.168.0.2:111"));
+	}
+
+
+
 
 	@Test
 	public void it_qk_xuni(){
@@ -59,13 +68,6 @@ public class KetamaHash {
 	}
 
 
-
-	@Test
-	public void it_qk1(){
-		System.out.println(hashKey("192.168.0.1:111"));
-		System.out.println(hashKey("192.168.0.3:111"));
-		System.out.println(hashKey("192.168.0.2:111"));
-	}
 
 }
 
