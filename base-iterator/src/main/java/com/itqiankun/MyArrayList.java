@@ -2,11 +2,11 @@ package com.itqiankun;
 
 import java.util.Iterator;
 
-public class MyCollection<T> implements Iterable<T> {
+public class MyArrayList<T> implements Iterable<T> {
 	private T[] elements;
 	private int size;
 
-	public MyCollection(T[] elements) {
+	public MyArrayList(T[] elements) {
 		this.elements = elements;
 		this.size = elements.length;
 	}
@@ -14,20 +14,20 @@ public class MyCollection<T> implements Iterable<T> {
 	// 实现Iterable接口的iterator()方法，返回一个迭代器对象
 	@Override
 	public Iterator<T> iterator() {
-		return new MyIterator();
+		return new MyItr();
 	}
 
 	// 自定义迭代器类实现Iterator接口
-	private class MyIterator implements Iterator<T> {
+	private class MyItr implements Iterator<T> {
 		private int currentIndex;
 
-		public MyIterator() {
+		public MyItr() {
 			this.currentIndex = 0;
 		}
 
 		@Override
 		public boolean hasNext() {
-			return currentIndex < size;
+			return currentIndex != size;
 		}
 
 		@Override
@@ -45,7 +45,7 @@ public class MyCollection<T> implements Iterable<T> {
 		String[] names = {"Alice", "Bob", "Charlie", "Dave"};
 
 		// 创建自定义集合对象
-		MyCollection<String> collection = new MyCollection<>(names);
+		MyArrayList<String> collection = new MyArrayList<>(names);
 
 		// 使用增强的for循环遍历集合中的元素
 		for (String name : collection) {

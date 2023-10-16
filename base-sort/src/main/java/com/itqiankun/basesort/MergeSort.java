@@ -1,4 +1,4 @@
-package com.itqiankun;
+package com.itqiankun.basesort;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -6,6 +6,9 @@ import org.junit.Test;
 import java.util.Arrays;
 
 /**
+ *
+ * 分治排序底层实现
+ *
  * @author: ma_qiankun
  * @date: 2023/10/16
  **/
