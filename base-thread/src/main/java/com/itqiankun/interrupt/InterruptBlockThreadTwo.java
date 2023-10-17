@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class InterruptBlockThreadTwo {
 	private static int i;
+
 	public static void main(String[] args) throws InterruptedException {
 		Thread thread=new Thread(()->{
 			log.info("isInterrupted() result:{}", Thread.currentThread().isInterrupted());
