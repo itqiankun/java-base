@@ -28,6 +28,14 @@ public class DemoTest {
     }
 
     @Test
+    public void it_qk_() {
+        AtomicInteger idx = new AtomicInteger();
+        for (int i = 0; i < 100; i++) {
+            System.out.println(idx.getAndIncrement() % 10);
+        }
+    }
+
+    @Test
     public void it_qk_1() throws Exception {
         int num = 5;
         int result = num << 2;

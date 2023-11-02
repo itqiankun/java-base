@@ -49,6 +49,9 @@
         <module>base-map</module>
         <module>base-queue</module>
         <module>base-sort</module>
+        <module>base-variable</module>
+        <module>base-unsafe</module>
+        <module>base-data-type</module>
     </modules>
 
     <properties>

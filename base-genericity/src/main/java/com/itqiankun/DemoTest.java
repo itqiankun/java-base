@@ -18,6 +18,12 @@ public class DemoTest {
         log.info(doubleMyClass.getValue().toString());
     }
 
+    @Test
+    public void it_qk_() throws Exception {
+        MyClass<Number> numberMyClass = new MyClass<>(new Integer(10));
+        log.info(numberMyClass.getValue().toString());
+    }
+
 
 
 
