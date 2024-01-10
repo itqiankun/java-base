@@ -19,4 +19,6 @@ public class OptionalDemo {
         Optional<String> optional =  Optional.ofNullable(strHello);
         System.out.println(optional.isPresent());
     }
+
+
 }

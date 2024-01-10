@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  * @date: 2023/4/3
  **/
 @Slf4j
-public class DemoTest {
+public class GuavaTest {
 
     @Test
     public void it_qk() throws Exception {
