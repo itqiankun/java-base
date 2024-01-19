@@ -1,12 +1,17 @@
 package com.itqiankun;
 
+import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author: ma_qiankun
  * @date: 2023/3/23
  **/
+@Slf4j
 public class Client {
 
     public static void main(String[] args) {
@@ -18,6 +23,9 @@ public class Client {
 
         testFruit("apple", factoryMap);
         testFruit("grape", factoryMap);
+
+
+
     }
 
     private static void testFruit(String fruitName, Map<String, FruitFactory> factoryMap) {
@@ -25,4 +33,8 @@ public class Client {
         Fruit fruit = factory.generationFruit(); // 这里返回的是水果接口
         fruit.color();
     }
+
+
+
+
 }

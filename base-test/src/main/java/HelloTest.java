@@ -1,6 +1,8 @@
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @author: ma_qiankun
  * @date: 2023/10/1
@@ -26,4 +28,12 @@ public class HelloTest {
 		log.info("hello world");
 	}
 
+
+	@Test
+	public void it() throws InterruptedException {
+		for (int i = 0; i < 100000; i++) {
+			TimeUnit.MILLISECONDS.sleep(1000 - System.currentTimeMillis() % 1000);
+			log.info("输出日志");
+		}
+	}
 }
