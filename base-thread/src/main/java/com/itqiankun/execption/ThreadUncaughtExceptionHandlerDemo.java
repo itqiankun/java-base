@@ -14,11 +14,11 @@ public class ThreadUncaughtExceptionHandlerDemo {
 			int i = 1 / 0;
 			System.out.println("hello");
 		});
-		thread.setUncaughtExceptionHandler(new MyUnchecckedExceptionhandler());
+		thread.setUncaughtExceptionHandler(new MyUncaughtExceptionHandler());
 		thread.start();
 	}
 
-	static class MyUnchecckedExceptionhandler implements Thread.UncaughtExceptionHandler {
+	static class MyUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
 		@Override
 		public void uncaughtException(Thread t, Throwable e) {
 			log.info("线程:{}，抛出异常", t.getName(), e);

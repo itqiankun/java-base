@@ -16,4 +16,11 @@ public class RandomDemo {
 		System.out.println(random.nextInt());
 		System.out.println(random.nextInt());
 	}
+	@Test
+	public void it_qk_1(){
+		Random random = new Random();
+		for (int i = 0; i < 100; i++) {
+			System.out.println(random.nextInt(100));
+		}
+	}
 }

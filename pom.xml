@@ -10,6 +10,12 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>base-test</module>
+        <module>base-classloader</module>
+        <module>base-spi</module>
+        <module>base-javaassist</module>
+        <module>base-javaagent-util</module>
+        <module>base-javaagent-use</module>
+        <module>base-jdbc</module>
         <module>slf4j-simple</module>
         <module>slf4j-log4j</module>
         <module>slf4j-logback</module>

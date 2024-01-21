@@ -6,8 +6,8 @@ package com.itqiankun.eventobject;
  **/
 public class CustomEventListenerImpl implements CustomEventListener {
 	@Override
-	public void handleCustomEvent(CustomEvent event) {
+	public void customEventListen(CustomEvent event) {
 		// 处理事件逻辑
-		System.out.println("CustomEventListenerImpl 执行触发逻辑 handleCustomEvent()");
+		System.out.println("CustomEventListenerImpl 执行触发逻辑 customEventListen()");
 	}
 }

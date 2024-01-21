@@ -5,6 +5,6 @@ package com.itqiankun.eventobject;
  * @date: 2023/9/5
  **/
 public interface CustomEventListener {
-	void handleCustomEvent(CustomEvent event);
+	void customEventListen(CustomEvent event);
 
 }

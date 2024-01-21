@@ -18,5 +18,9 @@ public class OneFieldAnnotationDemo {
 		for (Annotation annotation : annotations) {
 			log.info("Annotation: {}", annotation);
 		}
+		int i = "hello".hashCode();
+		System.out.println(i % 31);
 	}
+
+
 }

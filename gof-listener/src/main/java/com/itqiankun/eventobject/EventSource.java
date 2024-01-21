@@ -14,15 +14,11 @@ public class EventSource {
 		listeners.add(listener);
 	}
 
-	public void removeCustomEventListener(CustomEventListener listener) {
-		listeners.remove(listener);
-	}
-
 	public void triggerEvent(CustomEvent event) {
 		System.out.println("事件源执行时间");
 
 		for (CustomEventListener listener : listeners) {
-			listener.handleCustomEvent(event);
+			listener.customEventListen(event);
 		}
 	}
 }

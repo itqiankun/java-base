@@ -55,4 +55,32 @@ public class DemoTest {
         int result = num >>> 3;
         System.out.println(result);  // 输出 5
     }
+    @Test
+    public void it_qk_5() throws Exception {
+        int num = 16;
+        System.out.println(num >>> 1);
+        System.out.println(num >>> 2);
+        System.out.println(num >>> 3);
+        System.out.println(num >>> 4);
+        System.out.println(num >>> 5);
+    }
+    @Test
+    public void it_qk_6() throws Exception {
+        int num = 16;
+        System.out.println(num >>>= 1);
+        System.out.println(num >>>= 1);
+        System.out.println(num >>>= 1);
+        System.out.println(num >>>= 1);
+        System.out.println(num >>>= 1);
+    }
+    @Test
+    public void it_qk_7() throws Exception {
+        int num = 16;
+        System.out.println(num >>>= 1);
+
+        int numtwo = 16;
+        numtwo = numtwo >>> 1;
+        System.out.println(numtwo);
+
+    }
 }
