@@ -1,5 +1,6 @@
 package com.itqiankun.functioninterface;
 
+import cn.hutool.core.lang.copier.Copier;
 import org.junit.Test;
 
 import java.util.function.Supplier;
@@ -10,7 +11,9 @@ import java.util.function.Supplier;
  **/
 public class SupplierExample {
     public static void main(String[] args) {
-
+        Supplier<String> stringSupplier = () -> "hello";
+        String s = stringSupplier.get();
+        System.out.println(s);
     }
 
     @Test
@@ -36,9 +39,24 @@ public class SupplierExample {
         SupplierPerson supplierPerson = currentTimeSupplier.get();
         System.out.println(supplierPerson);
     }
+    @Test
+    public void it_qk_supper_no_(){
+        Supplier<String> stringSupplier = () -> "hello";
+        String s = stringSupplier.get();
+        System.out.println(s);
+    }
 
+    @Test
+    public void it_qk_supper_get_method(){
+        Supplier<String> stringSupplier = () -> getStrMethod();
+        stringSupplier.get();
+        stringSupplier.get();
+    }
 
-
+    public String getStrMethod() {
+        System.out.println("method");
+        return "hello";
+    }
 }
 
 
