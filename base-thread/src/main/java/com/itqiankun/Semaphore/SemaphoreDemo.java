@@ -9,12 +9,12 @@ import java.util.concurrent.Semaphore;
  * @date: 2023/10/18
  **/
 @Slf4j
-public class SemaphoreExample  {
+public class SemaphoreDemo {
 	public static void main(String[] args) {
 		Semaphore semaphore = new Semaphore(3); // 创建一个初始许可证数量为 3 的 Semaphore
 
 		// 创建多个线程并启动
-		for (int i = 1; i <= 5; i++) {
+		for (int i = 0; i < 5; i++) {
 			Thread thread = new Thread(new Worker(semaphore, i));
 			thread.start();
 		}

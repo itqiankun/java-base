@@ -26,7 +26,6 @@ public class SubReactorThread extends Thread{
             this.businessExecutorPool = businessExecutorPool;
             this.selector = Selector.open();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -62,7 +61,6 @@ public class SubReactorThread extends Thread{
                 selector.select(1000);
                 ops = selector.selectedKeys();
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
                 continue;
             }
@@ -71,27 +69,19 @@ public class SubReactorThread extends Thread{
                 SelectionKey key = it.next();
                 it.remove();
                 try {
-                    if (key.isWritable()) { // 向客户端发送请求
+                    if (key.isWritable()) {
                         SocketChannel clientChannel = (SocketChannel) key.channel();
                         ByteBuffer buf = (ByteBuffer) key.attachment();
-                        clientChannel.write(buf);// 这里其实要和taskList的实现一样，需要处理缓存区满的情况
+                        clientChannel.write(buf);
                         System.out.println("服务端向客户端发送数据。。。");
                         // 重新注册读事件
                         clientChannel.register(selector, SelectionKey.OP_READ);
-                    } else if (key.isReadable()) { // 接受客户端请求
+                    } else if (key.isReadable()) {
                         System.out.println("SubReactorThread服务端接收客户端连接请求。。。");
                         SocketChannel clientChannel = (SocketChannel) key.channel();
                         ByteBuffer buf = ByteBuffer.allocate(1024);
-//                        System.out.println(buf.capacity());
-                        /**
-                         * 这里其实实现的非常不优雅，需要对读取处理办关闭，而且一次读取，并不一定能将一个请求读取
-                         * 一个请求，也不要会刚好读取到一个完整对请求，
-                         * 这里其实是需要编码，解码，也就是通信协议  @todo
-                         * 这里如何做，大家可以思考一下，后面我们可以体验netty是否如何优雅处理的。
-                         */
                         int rc = clientChannel.read(buf);// 解析请求完毕
-                        //转发请求到具体的业务线程；当然，这里其实可以向dubbo那样，支持转发策略，如果执行时间短，
-                        //，比如没有数据库操作等，可以在io线程中执行。本实例，转发到业务线程池
+                        // 这里会封装一个有`write`事件的`NioTask`
                         dispatch(clientChannel, buf);
                     }
                 } catch (Throwable e) {
@@ -101,7 +91,7 @@ public class SubReactorThread extends Thread{
             }
 
             // 处理完事件后，我们还需要处理其他任务
-            // 1. 一个是处理`accept`线程接受到的`SocketChannel`，注册`accept`事件到`Selector`上面
+            // 1. 一个是处理`accept`线程接受到的`SocketChannel`，注册`read`事件到`Selector`上面
             // 2. 处理业务线程的执行结果处理，然后注册`write`事件到`Selector`上面
             if (!taskList.isEmpty()) {
                 try {
@@ -111,18 +101,20 @@ public class SubReactorThread extends Thread{
                         NioTask task = it.next();
                         try {
                             SocketChannel sc = task.getSc();
-                            if(task.getData() != null ) { // 写操作
+                            // 这里会注册`write事件`到`Selector`上面
+                            if(task.getData() != null ) {
                                 ByteBuffer byteBuffer = (ByteBuffer)task.getData();
                                 byteBuffer.flip();
                                 int wc = sc.write(byteBuffer);
                                 System.out.println("服务端向客户端发送数据。。。");
-                                if(wc < 1 && byteBuffer.hasRemaining()) { // 说明写缓存区已满，需要注册写事件
+                                // 说明写缓存区已满，需要注册写事件
+                                if(wc < 1 && byteBuffer.hasRemaining()) {
                                     sc.register(selector, task.getOp(), task.getData());
                                     continue;
                                 }
-                                byteBuffer = null;//释放内存
+                                byteBuffer = null;
                             } else {
-                                // 这里把`accept`后的`SocketChannel`给注册到`Selector`上面，这里的`task.getOp()`应该是`OP_READ`
+                                // 注册`read`事件到`Selector`上面
                                 sc.register(selector, task.getOp());
                             }
                         } catch (Throwable e) {

@@ -13,7 +13,6 @@ public class CountDownLatchOne {
 
 	public static void main(String[] args) {
 		ExecutorService executorService = Executors.newFixedThreadPool(2);
-		CountDownLatch cdl = new CountDownLatch(2);
 		CountDownLatch startCountDownLatch = new CountDownLatch(1);
 		Future<Integer> submitOne = executorService.submit(() -> {
 			try {
@@ -22,8 +21,6 @@ public class CountDownLatchOne {
 			} catch (Exception e) {
 				//异常处理
 				e.printStackTrace();
-			} finally {
-				cdl.countDown();
 			}
 			return null;
 		});
@@ -31,7 +28,6 @@ public class CountDownLatchOne {
 		Future<Integer> submitTwo = executorService.submit(() -> {
 			try {
 				startCountDownLatch.await();
-				cdl.countDown();
 				return function2();
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -42,7 +38,6 @@ public class CountDownLatchOne {
 		try {
 			// 发送信号开始执行
 			startCountDownLatch.countDown();
-			cdl.await();
 			Integer integer = submitOne.get();
 			Integer integer1 = submitTwo.get();
 			System.out.println("方法1结果:"+integer);

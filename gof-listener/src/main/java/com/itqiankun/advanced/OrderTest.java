@@ -13,19 +13,18 @@ public class OrderTest {
 		order.setOrderListener(new OrderListener() {
 			@Override
 			public void listenCreate(OrderEvent event) {
-				String price = event.getOrder().getPrice();
+				String price = event.getPrice();
 				System.out.println(price+" order create listen");
 			}
 
 			@Override
 			public void listenFinish(OrderEvent event) {
-				String price = event.getOrder().getPrice();
+				String price = event.getPrice();
 				System.out.println(price+" order finish listen ");
 			}
 		});
-		order.setPrice("200元");
 		OrderEvent orderEvent = new OrderEvent();
-		orderEvent.setOrder(order);
+		orderEvent.setPrice("200元");
 		order.create(orderEvent);
 		order.finish(orderEvent);
 	}
